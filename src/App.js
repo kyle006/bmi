@@ -4,6 +4,7 @@ import './App.css';
 const BmiCalculator = () => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
+  const [age, setAge] = useState('');
   const [gender, setGender] = useState('mänlich');
   const [bmiResult, setBmiResult] = useState(null);
 
@@ -16,7 +17,6 @@ const BmiCalculator = () => {
     const heightInMeters = height / 100;
     const bmi = weight / (heightInMeters * heightInMeters);
 
-   
 
     setBmiResult(bmi.toFixed(2));
   };
@@ -50,11 +50,15 @@ const BmiCalculator = () => {
           <label >Grösse (cm)</label>
           <input value={height} onChange={(e) => setHeight(e.target.value)} />
         </div>
+        <div>
+          <label >Alter</label>
+          <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+        </div>
         <div >
           <label>Geschlecht</label>
           <select  value={gender} onChange={(e) => setGender(e.target.value)}>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="männlich">Männlich</option>
+            <option value="weiblich">Weiblich</option>
           </select>
         </div>
         <button type="button" onClick={calculateBMI}>BMI Ausrechnen</button>
