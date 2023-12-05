@@ -1,4 +1,4 @@
-#This is a School project
+# This is a School project
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
